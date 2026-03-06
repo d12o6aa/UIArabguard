@@ -274,8 +274,8 @@ function ThreatLogsSection() {
               Threat Logging will be enabled with your API connection. <span style={{ color: "#00d2ff", cursor: "pointer", textDecoration: "underline" }}>Learn more in Documentation.</span>
             </p>
             <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
-              <button style={{ background: "linear-gradient(135deg,#00d2ff,#0066ff)", color: "#04060f", fontWeight: 700, fontSize: 13, padding: "10px 22px", borderRadius: 8, border: "none", cursor: "pointer", fontFamily: "'Space Grotesk',sans-serif" }}>Connect API</button>
-              <button style={{ background: "transparent", color: "#00d2ff", fontSize: 13, padding: "10px 22px", borderRadius: 8, border: "1px solid rgba(0,180,255,0.3)", cursor: "pointer", fontFamily: "'Space Grotesk',sans-serif" }}>View Docs →</button>
+              <button style={{ background: "linear-gradient(135deg,#00d2ff,#0066ff)", color: "#04060f", fontWeight: 700, fontSize: 13, padding: "10px 22px", borderRadius: 8, border: "none", cursor: "pointer", fontFamily: "var(--font)" }}>Connect API</button>
+              <button style={{ background: "transparent", color: "#00d2ff", fontSize: 13, padding: "10px 22px", borderRadius: 8, border: "1px solid rgba(0,180,255,0.3)", cursor: "pointer", fontFamily: "var(--font)" }}>View Docs →</button>
             </div>
           </div>
         </div>
@@ -415,7 +415,7 @@ function DocsSection() {
   const SECTIONS_NAV = [
     { id: "overview", label: "Overview" }, { id: "quickstart", label: "Quick Start" },
     { id: "api", label: "API Reference" }, { id: "pipeline", label: "Pipeline" },
-    { id: "license", label: "MIT License" }, { id: "contact", label: "Contact" },
+    { id: "license", label: "Legal" }, { id: "contact", label: "Contact" },
   ];
   const [activeSection, setActiveSection] = useState("overview");
   const [submitted, setSubmitted] = useState(false);
@@ -428,7 +428,7 @@ function DocsSection() {
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           {SECTIONS_NAV.map(({ id, label }) => (
             <button key={id} onClick={() => { setActiveSection(id); document.getElementById(`doc-${id}`)?.scrollIntoView({ behavior: "smooth" }); }}
-              style={{ display: "block", padding: "7px 14px", borderRadius: 7, fontSize: 13, cursor: "pointer", border: "1px solid transparent", textAlign: "left", background: activeSection === id ? "rgba(0,210,255,0.08)" : "none", borderColor: activeSection === id ? "rgba(0,210,255,0.2)" : "transparent", color: activeSection === id ? "#00d2ff" : "rgba(107,127,168,0.8)", fontFamily: "'Space Grotesk',sans-serif", transition: "all 0.2s" }}
+              style={{ display: "block", padding: "7px 14px", borderRadius: 7, fontSize: 13, cursor: "pointer", border: "1px solid transparent", textAlign: "left", background: activeSection === id ? "rgba(0,210,255,0.08)" : "none", borderColor: activeSection === id ? "rgba(0,210,255,0.2)" : "transparent", color: activeSection === id ? "#00d2ff" : "rgba(107,127,168,0.8)", fontFamily: "var(--font)", transition: "all 0.2s" }}
             >{label}</button>
           ))}
         </div>
@@ -438,7 +438,7 @@ function DocsSection() {
         <section id="doc-overview" style={{ marginBottom: 60 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(0,210,255,0.06)", border: "1px solid rgba(0,210,255,0.2)", borderRadius: 999, padding: "3px 12px", marginBottom: 16 }}>
             <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#00d2ff", animation: "pulse 2s infinite", display: "inline-block" }} />
-            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#00d2ff", letterSpacing: "0.12em" }}>v1.0.0 · STABLE</span>
+            <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 9, color: "#00d2ff", letterSpacing: "0.12em" }}>Enterprise Edition</span>
           </div>
           <h2 style={{ fontFamily: "Syne,sans-serif", fontWeight: 800, fontSize: "clamp(22px,3vw,30px)", marginBottom: 16, color: "#e8edf8" }}>ArabGuard Documentation</h2>
           <p style={{ fontSize: 14, color: "rgba(107,127,168,0.9)", lineHeight: 1.8, marginBottom: 16 }}>ArabGuard is a multi-layer security SDK that detects prompt-injection attacks and jailbreak attempts in Egyptian Arabic, Franco-Arabic, and English — before they reach your model.</p>
@@ -476,9 +476,9 @@ function DocsSection() {
         </section>
         <hr style={{ border: "none", borderTop: "1px solid rgba(0,180,255,0.08)", margin: "40px 0" }} />
         <section id="doc-license" style={{ marginBottom: 60 }}>
-          <h2 style={{ fontFamily: "Syne,sans-serif", fontWeight: 800, fontSize: "clamp(22px,3vw,28px)", marginBottom: 12, color: "#e8edf8" }}>MIT License</h2>
+          <h2 style={{ fontFamily: "Syne,sans-serif", fontWeight: 800, fontSize: "clamp(22px,3vw,28px)", marginBottom: 12, color: "#e8edf8" }}>Legal & Licensing</h2>
           <div style={{ background: "rgba(2,4,13,0.8)", border: "1px solid rgba(0,180,255,0.1)", borderRadius: 12, padding: "28px 32px", fontFamily: "'JetBrains Mono',monospace", fontSize: 12, color: "rgba(107,127,168,0.85)", lineHeight: 1.8 }}>
-            <p style={{ color: "#00d2ff", marginBottom: 12 }}>MIT License · Copyright (c) 2025 ArabGuard · Graduation Project</p>
+            <p style={{ color: "#00d2ff", marginBottom: 12 }}>Copyright © 2025 ArabGuard Inc. All rights reserved.</p>
             <p style={{ marginBottom: 12 }}>Permission is hereby granted, free of charge, to any person obtaining a copy of this software to deal in the Software without restriction, including rights to use, copy, modify, merge, and distribute.</p>
             <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</p>
           </div>
@@ -498,16 +498,16 @@ function DocsSection() {
                 <div key={key}>
                   <label style={{ fontSize: 12, fontFamily: "'JetBrains Mono',monospace", color: "rgba(107,127,168,0.8)", letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>{label}</label>
                   <input type={type} placeholder={placeholder} value={form[key]} onChange={(e) => setForm({ ...form, [key]: e.target.value })}
-                    style={{ width: "100%", background: "rgba(0,180,255,0.04)", border: "1px solid rgba(0,180,255,0.18)", borderRadius: 8, padding: "11px 14px", color: "#e8edf8", fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, outline: "none" }} />
+                    style={{ width: "100%", background: "rgba(0,180,255,0.04)", border: "1px solid rgba(0,180,255,0.18)", borderRadius: 8, padding: "11px 14px", color: "#e8edf8", fontFamily: "var(--font)", fontSize: 14, outline: "none" }} />
                 </div>
               ))}
               <div>
                 <label style={{ fontSize: 12, fontFamily: "'JetBrains Mono',monospace", color: "rgba(107,127,168,0.8)", letterSpacing: "0.08em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>Message</label>
                 <textarea placeholder="Partnership inquiry, research collaboration, or technical question..." value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  style={{ width: "100%", background: "rgba(0,180,255,0.04)", border: "1px solid rgba(0,180,255,0.18)", borderRadius: 8, padding: "11px 14px", color: "#e8edf8", fontFamily: "'Space Grotesk',sans-serif", fontSize: 14, outline: "none", resize: "vertical", minHeight: 120 }} />
+                  style={{ width: "100%", background: "rgba(0,180,255,0.04)", border: "1px solid rgba(0,180,255,0.18)", borderRadius: 8, padding: "11px 14px", color: "#e8edf8", fontFamily: "var(--font)", fontSize: 14, outline: "none", resize: "vertical", minHeight: 120 }} />
               </div>
               <button onClick={() => { if (form.name && form.email) setSubmitted(true); }}
-                style={{ background: "linear-gradient(135deg,#00d2ff,#0066ff)", color: "#04060f", fontWeight: 700, fontSize: 14, padding: "12px 28px", borderRadius: 9, border: "none", cursor: "pointer", fontFamily: "'Space Grotesk',sans-serif", alignSelf: "flex-start" }}>
+                style={{ background: "linear-gradient(135deg,#00d2ff,#0066ff)", color: "#04060f", fontWeight: 700, fontSize: 14, padding: "12px 28px", borderRadius: 9, border: "none", cursor: "pointer", fontFamily: "var(--font)", alignSelf: "flex-start" }}>
                 Send Message →
               </button>
             </div>
@@ -559,83 +559,206 @@ export default function App() {
   ];
 
   const CSS = `
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800&family=Cairo:wght@400;600;700&display=swap');
-    *{box-sizing:border-box;margin:0;padding:0;}
-    :root{
-      --bg:#04060f; --bg2:#070b18; --surface:rgba(10,16,35,0.8);
-      --border:rgba(0,180,255,0.12); --border2:rgba(0,180,255,0.06);
-      --cyan:#00d2ff; --blue:#0066ff; --indigo:#4433ff;
-      --text:#e8edf8; --muted:#6b7fa8; --dim:#3a4a6b;
-      --danger:#ff3366; --warn:#ffaa00;
-      --max-w:1120px;
+    /* ── Google Fonts: Inter (body) + JetBrains Mono (code) + Syne (display) + Cairo (Arabic) ── */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700&family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@700;800;900&family=Cairo:wght@400;600;700&display=swap');
+
+    /* ── Hard reset — wins over Vite's index.css & App.css ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand colours */
+      --bg:    #04060f;
+      --bg2:   #070b18;
+      --border: rgba(0,180,255,0.12);
+      --cyan:  #00d2ff;
+      --blue:  #0066ff;
+      --text:  #e8edf8;
+      --muted: #6b7fa8;
+      --dim:   #3a4a6b;
+      --danger:#ff3366;
+      --warn:  #ffaa00;
+      /* Typography */
+      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      /* Layout */
+      --max-w: 1200px;
+      --pad-x: clamp(16px, 4vw, 64px);
     }
-    html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;}
-    .mono{font-family:'JetBrains Mono',monospace;}
-    .syne{font-family:'Syne',sans-serif;}
-    ::-webkit-scrollbar{width:4px;}
-    ::-webkit-scrollbar-track{background:var(--bg2);}
-    ::-webkit-scrollbar-thumb{background:rgba(0,180,255,0.3);border-radius:2px;}
-    .grid-bg{background-image:linear-gradient(rgba(0,180,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,180,255,0.03) 1px,transparent 1px);background-size:60px 60px;}
-    .glow-cyan{filter:drop-shadow(0 0 12px rgba(0,210,255,0.5));}
-    .text-glow{text-shadow:0 0 30px rgba(0,210,255,0.4);}
-    .glass{background:rgba(7,11,24,0.7);border:1px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
-    .grad-text{background:linear-gradient(135deg,#00d2ff 0%,#0066ff 60%,#6633ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-    /* ── Centering system ── */
-    .page-wrap{width:100%;max-width:var(--max-w);margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px;}
-    .section-centered{width:100%;padding-left:24px;padding-right:24px;}
-    .section-centered > *{max-width:var(--max-w);margin-left:auto;margin-right:auto;}
-    /* ── Animations ── */
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
-    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
-    @keyframes scan{0%{top:-2px;}100%{top:100%;}}
-    @keyframes shimmer{0%{background-position:-200% 0;}100%{background-position:200% 0;}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-    @keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-    @keyframes cardGlow{0%,100%{box-shadow:0 0 0px transparent;}50%{box-shadow:0 0 32px var(--glow);}}
-    .fade-in{animation:fadeInUp 0.7s ease forwards;}
-    .delay-1{animation-delay:.1s;opacity:0;}
-    .delay-2{animation-delay:.25s;opacity:0;}
-    .delay-3{animation-delay:.4s;opacity:0;}
-    .delay-4{animation-delay:.55s;opacity:0;}
-    .delay-5{animation-delay:.7s;opacity:0;}
-    .shimmer{background:linear-gradient(90deg,transparent 0%,rgba(0,210,255,0.08) 50%,transparent 100%);background-size:200% 100%;animation:shimmer 3s linear infinite;}
+
+    /* ── Comprehensive layout fix — works on Chrome, Firefox, Safari, Edge ── */
+    html {
+      width: 100%;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    /* Override Vite default: body{display:flex;place-items:center} */
+    html, body, #root {
+      width:        100% !important;
+      display:      block !important;
+      place-items:  unset !important;
+      text-align:   left  !important;
+      max-width:    none  !important;
+      padding:      0     !important;
+      margin:       0     !important;
+    }
+    body {
+      min-height:  100vh;
+      min-width:   320px;
+      background:  var(--bg);
+      color:       var(--text);
+      font-family: var(--font);
+      font-size:   16px;
+      line-height: 1.6;
+      overflow-x:  hidden;
+    }
+    a   { color: inherit; text-decoration: none; }
+    img, svg { display: block; }
+    button { font-family: var(--font); cursor: pointer; }
+
+    /* ── Utility classes ── */
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .syne { font-family: 'Syne', sans-serif; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: rgba(0,180,255,0.3); border-radius: 2px; }
+
+    /* ── Centered container — the ONLY layout primitive ── */
+    /* All sections use this. margin:0 auto + full width = perfectly centred on every screen */
+    .page-wrap {
+      width:          100%;
+      max-width:      var(--max-w);
+      margin-left:    auto;
+      margin-right:   auto;
+      padding-left:   var(--pad-x);
+      padding-right:  var(--pad-x);
+    }
+
+    /* ── Background ── */
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0,180,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,180,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ── Visual utilities ── */
+    .glow-cyan { filter: drop-shadow(0 0 12px rgba(0,210,255,0.5)); }
+    .text-glow  { text-shadow: 0 0 30px rgba(0,210,255,0.4); }
+    .glass {
+      background: rgba(7,11,24,0.7);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .grad-text {
+      background: linear-gradient(135deg,#00d2ff 0%,#0066ff 60%,#6633ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .shimmer {
+      background: linear-gradient(90deg,transparent,rgba(0,210,255,0.08),transparent);
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+    }
+
+    /* ── Keyframes ── */
+    @keyframes pulse    { 0%,100%{opacity:1;transform:scale(1);}     50%{opacity:.5;transform:scale(1.4);} }
+    @keyframes float    { 0%,100%{transform:translateY(0);}           50%{transform:translateY(-12px);} }
+    @keyframes scan     { 0%{top:-2px;}                                100%{top:100%;} }
+    @keyframes shimmer  { 0%{background-position:-200% 0;}            100%{background-position:200% 0;} }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(24px);} to{opacity:1;transform:translateY(0);} }
+    @keyframes spin     { from{transform:rotate(0deg);}                to{transform:rotate(360deg);} }
+
+    .fade-in { animation: fadeInUp 0.7s ease forwards; }
+    .delay-1 { animation-delay:.10s; opacity:0; }
+    .delay-2 { animation-delay:.25s; opacity:0; }
+    .delay-3 { animation-delay:.40s; opacity:0; }
+    .delay-4 { animation-delay:.55s; opacity:0; }
+    .delay-5 { animation-delay:.70s; opacity:0; }
+
     /* ── Buttons ── */
-    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#00d2ff,#0066ff);color:#04060f;font-weight:700;font-size:14px;padding:12px 28px;border-radius:8px;border:none;cursor:pointer;transition:all .2s;text-decoration:none;letter-spacing:.02em;font-family:'Space Grotesk',sans-serif;}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,210,255,0.35);}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(0,180,255,0.35);color:var(--cyan);font-weight:600;font-size:14px;padding:12px 28px;border-radius:8px;cursor:pointer;transition:all .2s;text-decoration:none;background:transparent;letter-spacing:.02em;font-family:'Space Grotesk',sans-serif;}
-    .btn-outline:hover{background:rgba(0,210,255,0.08);border-color:var(--cyan);transform:translateY(-2px);}
-    /* ── Components ── */
-    .tag{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(0,210,255,0.25);background:rgba(0,210,255,0.06);color:var(--cyan);font-size:11px;font-family:'JetBrains Mono',monospace;padding:5px 12px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase;}
-    .scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,210,255,0.4),transparent);animation:scan 3s linear infinite;pointer-events:none;}
-    .status-badge{padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.06em;}
-    .terminal{background:#02040d;border:1px solid rgba(0,180,255,0.2);border-radius:12px;overflow:hidden;}
-    .terminal-bar{background:rgba(0,180,255,0.06);border-bottom:1px solid rgba(0,180,255,0.1);padding:10px 16px;display:flex;align-items:center;gap:8px;}
-    .t-dot{width:10px;height:10px;border-radius:50%;}
-    .demo-input{width:100%;background:rgba(0,180,255,0.04);border:1px solid rgba(0,180,255,0.2);border-radius:8px;padding:12px 16px;color:var(--text);font-family:'JetBrains Mono',monospace;font-size:13px;outline:none;transition:border-color .2s;direction:auto;}
-    .demo-input:focus{border-color:rgba(0,210,255,0.5);}
-    .demo-input::placeholder{color:var(--dim);}
-    /* ── Tab nav ── */
-    .tab-bar{display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none;}
-    .tab-bar::-webkit-scrollbar{display:none;}
-    .tab-btn{white-space:nowrap;padding:7px 14px;border-radius:6px;font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;cursor:pointer;border:1px solid transparent;transition:all .2s;background:none;color:rgba(107,127,168,0.7);}
-    .tab-btn.active{background:rgba(0,210,255,0.1);border-color:rgba(0,210,255,0.25);color:#00d2ff;}
-    .tab-btn:not(.active):hover{color:var(--text);background:rgba(255,255,255,0.03);}
-    /* ── Responsive ── */
-    @media(max-width:900px){
-      .hero-grid{grid-template-columns:1fr!important;}
-      .hero-right{display:none!important;}
-      .stats-grid{grid-template-columns:repeat(2,1fr)!important;}
-      .problem-grid{grid-template-columns:1fr!important;}
-      .pipeline-grid{grid-template-columns:repeat(2,1fr)!important;}
-      .features-grid{grid-template-columns:1fr!important;}
-      .pip-cards{grid-template-columns:repeat(2,1fr)!important;}
-      .page-wrap{padding-left:20px;padding-right:20px;}
+    .btn-primary {
+      display:inline-flex; align-items:center; gap:8px;
+      background:linear-gradient(135deg,#00d2ff,#0066ff);
+      color:#04060f; font-weight:700; font-size:14px;
+      padding:12px 28px; border-radius:8px; border:none;
+      cursor:pointer; transition:all .2s; text-decoration:none;
+      letter-spacing:.01em; font-family:var(--font);
+      white-space: nowrap;
     }
-    @media(max-width:600px){
-      .pip-cards{grid-template-columns:1fr!important;}
-      .docs-grid{grid-template-columns:1fr!important;}
-      .page-wrap{padding-left:16px;padding-right:16px;}
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(0,210,255,0.35); }
+
+    .btn-outline {
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid rgba(0,180,255,0.35); color:var(--cyan);
+      font-weight:600; font-size:14px; padding:12px 28px;
+      border-radius:8px; cursor:pointer; transition:all .2s;
+      text-decoration:none; background:transparent;
+      letter-spacing:.01em; font-family:var(--font);
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background:rgba(0,210,255,0.08); border-color:var(--cyan); transform:translateY(-2px); }
+
+    /* ── UI components ── */
+    .tag {
+      display:inline-flex; align-items:center; gap:6px;
+      border:1px solid rgba(0,210,255,0.25); background:rgba(0,210,255,0.06);
+      color:var(--cyan); font-size:11px; font-family:'JetBrains Mono',monospace;
+      padding:5px 12px; border-radius:999px;
+      letter-spacing:.06em; text-transform:uppercase;
+    }
+    .scan-line {
+      position:absolute; left:0; right:0; height:2px;
+      background:linear-gradient(90deg,transparent,rgba(0,210,255,0.4),transparent);
+      animation:scan 3s linear infinite; pointer-events:none;
+    }
+    .status-badge { padding:2px 8px; border-radius:4px; font-size:10px; font-weight:700; letter-spacing:.06em; }
+    .terminal { background:#02040d; border:1px solid rgba(0,180,255,0.2); border-radius:12px; overflow:hidden; }
+    .terminal-bar { background:rgba(0,180,255,0.06); border-bottom:1px solid rgba(0,180,255,0.1); padding:10px 16px; display:flex; align-items:center; gap:8px; }
+    .t-dot { width:10px; height:10px; border-radius:50%; }
+    .demo-input {
+      width:100%; background:rgba(0,180,255,0.04); border:1px solid rgba(0,180,255,0.2);
+      border-radius:8px; padding:12px 16px; color:var(--text);
+      font-family:'JetBrains Mono',monospace; font-size:13px; outline:none;
+      transition:border-color .2s; direction:auto;
+    }
+    .demo-input:focus { border-color:rgba(0,210,255,0.5); }
+    .demo-input::placeholder { color:var(--dim); }
+
+    /* ── Tab nav ── */
+    .tab-bar { display:flex; gap:2px; align-items:center; overflow-x:auto; scrollbar-width:none; }
+    .tab-bar::-webkit-scrollbar { display:none; }
+    .tab-btn {
+      white-space:nowrap; padding:7px 16px; border-radius:6px;
+      font-size:13px; font-weight:500; font-family:var(--font);
+      letter-spacing:.01em; cursor:pointer; border:1px solid transparent;
+      transition:all .2s; background:none; color:rgba(107,127,168,0.75);
+    }
+    .tab-btn.active       { background:rgba(0,210,255,0.1); border-color:rgba(0,210,255,0.25); color:#00d2ff; }
+    .tab-btn:not(.active):hover { color:var(--text); background:rgba(255,255,255,0.03); }
+
+    /* ── Responsive breakpoints ── */
+    @media(max-width:1100px) {
+      :root { --pad-x: 40px; }
+    }
+    @media(max-width:900px) {
+      :root { --pad-x: 24px; }
+      .hero-grid     { grid-template-columns:1fr!important; }
+      .hero-right    { display:none!important; }
+      .stats-grid    { grid-template-columns:repeat(2,1fr)!important; }
+      .problem-grid  { grid-template-columns:1fr!important; }
+      .pipeline-grid { grid-template-columns:repeat(2,1fr)!important; }
+      .features-grid { grid-template-columns:1fr!important; }
+      .pip-cards     { grid-template-columns:repeat(2,1fr)!important; }
+    }
+    @media(max-width:640px) {
+      :root { --pad-x: 16px; }
+      .pip-cards     { grid-template-columns:1fr!important; }
+      .docs-grid     { grid-template-columns:1fr!important; }
+      .stats-grid    { grid-template-columns:1fr!important; }
     }
   `;
 
@@ -644,53 +767,57 @@ export default function App() {
       <style>{CSS}</style>
 
       {/* ── NAVBAR ─────────────────────────────────────────────────────────── */}
-      <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 24px", transition: "all 0.3s", background: scrolled ? "rgba(4,6,15,0.95)" : "transparent", backdropFilter: scrolled ? "blur(20px)" : "none", borderBottom: scrolled ? "1px solid rgba(0,180,255,0.1)" : "none" }}>
-        <div className="page-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 66, gap: 16 }}>
+      <nav style={{
+        position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+        transition: "background 0.3s, border-color 0.3s",
+        background: scrolled ? "rgba(4,6,15,0.96)" : "rgba(4,6,15,0.4)",
+        backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)",
+        borderBottom: `1px solid ${scrolled ? "rgba(0,180,255,0.14)" : "rgba(0,180,255,0.05)"}`,
+      }}>
+        <div className="page-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 72, gap: 16 }}>
+
           {/* Logo */}
-          <button onClick={() => setActiveTab("home")} style={{ display: "flex", alignItems: "center", gap: 10, background: "none", border: "none", cursor: "pointer", flexShrink: 0 }}>
-            {/* SVG Shield Logo */}
-            <svg width="36" height="36" viewBox="0 0 200 200" fill="none" style={{ filter: "drop-shadow(0 0 8px rgba(0,210,255,0.45))" }}>
+          <button onClick={() => setActiveTab("home")} style={{ display: "flex", alignItems: "center", gap: 12, background: "none", border: "none", cursor: "pointer", flexShrink: 0, padding: 0 }}>
+            <svg width="44" height="44" viewBox="0 0 200 200" fill="none" style={{ filter: "drop-shadow(0 0 10px rgba(0,210,255,0.55))", flexShrink: 0 }}>
               <defs>
                 <linearGradient id="nav-sg" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#00d2ff" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#0066ff" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#0066ff" stopOpacity="0.9" />
                 </linearGradient>
               </defs>
-              {/* Outer hex ring */}
-              <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" stroke="url(#nav-sg)" strokeWidth="6" fill="rgba(0,210,255,0.07)" />
-              {/* Shield body */}
-              <path d="M100 52 L138 68 L138 103 C138 124 120 140 100 148 C80 140 62 124 62 103 L62 68 Z" fill="url(#nav-sg)" opacity="0.9" />
-              {/* Checkmark */}
-              <path d="M86 102 L96 114 L120 85" stroke="white" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+              <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" stroke="url(#nav-sg)" strokeWidth="5" fill="rgba(0,210,255,0.08)" />
+              <path d="M100 52 L138 68 L138 103 C138 124 120 140 100 148 C80 140 62 124 62 103 L62 68 Z" fill="url(#nav-sg)" opacity="0.92" />
+              <path d="M86 102 L96 114 L120 85" stroke="white" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round" fill="none" />
             </svg>
-            <span style={{ fontFamily: "Syne,sans-serif", fontWeight: 800, fontSize: 18, color: "#e8edf8", letterSpacing: "-0.02em" }}>ArabGuard</span>
-            <span style={{ fontSize: 10, color: "rgba(0,210,255,0.6)", border: "1px solid rgba(0,180,255,0.2)", padding: "2px 8px", borderRadius: 4, fontFamily: "'JetBrains Mono',monospace", letterSpacing: "0.1em", background: "rgba(0,180,255,0.05)" }}>v1.0</span>
+            <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: 22, color: "#e8edf8", letterSpacing: "-0.03em", lineHeight: 1 }}>ArabGuard</span>
           </button>
 
-          {/* Tab bar — center */}
+          {/* Tab nav — centered */}
           <div className="tab-bar" style={{ flex: 1, justifyContent: "center" }}>
             {TAB_LABELS.map(({ id, label }) => (
-              <button key={id} className={`tab-btn${activeTab === id ? " active" : ""}`} onClick={() => { setActiveTab(id); window.scrollTo(0, 0); }}>
+              <button key={id} className={`tab-btn${activeTab === id ? " active" : ""}`}
+                onClick={() => { setActiveTab(id); window.scrollTo(0, 0); }}>
                 {label}
               </button>
             ))}
           </div>
 
-          {/* CTA */}
-          <a href="https://huggingface.co/d12o6aa/ArabGuard" target="_blank" rel="noreferrer" className="btn-primary" style={{ padding: "8px 18px", fontSize: 12, flexShrink: 0 }}>
-            🤗 Model
+          {/* CTA button */}
+          <a href="https://huggingface.co/d12o6aa/ArabGuard" target="_blank" rel="noreferrer"
+            className="btn-primary" style={{ padding: "10px 20px", fontSize: 13, flexShrink: 0 }}>
+            🤗 View on HuggingFace
           </a>
         </div>
       </nav>
 
       {/* ── PAGE CONTENT ───────────────────────────────────────────────────── */}
-      <div style={{ paddingTop: 66 }}>
+      <div style={{ paddingTop: 72 }}>
 
         {/* ── HOME ── */}
         {activeTab === "home" && (
           <>
             {/* Hero */}
-            <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "80px 24px 60px", position: "relative", overflow: "hidden" }}
+            <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "80px 0 60px", position: "relative", overflow: "hidden" }}
               className="grid-bg">
               <ParticleCanvas />
               <div style={{ position: "absolute", top: "10%", left: "5%", width: 500, height: 500, background: "radial-gradient(circle,rgba(0,210,255,0.05) 0%,transparent 70%)", pointerEvents: "none" }} />
@@ -937,9 +1064,9 @@ export default function App() {
             </section>
 
             {/* CTA Banner */}
-            <section style={{ background: "linear-gradient(135deg,rgba(0,210,255,0.06) 0%,rgba(0,80,255,0.08) 100%)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "80px 24px" }}>
+            <section style={{ background: "linear-gradient(135deg,rgba(0,210,255,0.06) 0%,rgba(0,80,255,0.08) 100%)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "80px 0" }}>
               <div className="page-wrap" style={{ textAlign: "center" }}>
-                <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#00d2ff", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: 16 }}>Open Source · MIT License</p>
+                <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 10, color: "#00d2ff", letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: 16 }}>Enterprise-Grade Security</p>
                 <h2 className="syne" style={{ fontSize: "clamp(30px,5vw,52px)", fontWeight: 800, lineHeight: 1.1, marginBottom: 20, maxWidth: 640, margin: "0 auto 20px" }}>
                   Guard your LLM.<br /><span className="grad-text">Speak their language.</span>
                 </h2>
@@ -968,7 +1095,7 @@ export default function App() {
                     <p style={{ fontSize: 13, color: "var(--muted)", maxWidth: 280, lineHeight: 1.65 }}>The world-first AI security shield built for the Egyptian dialect and Franco-Arabic.</p>
                   </div>
                   <div style={{ display: "flex", gap: 48, flexWrap: "wrap" }}>
-                    {[{ label: "Product", links: ["Dashboard", "Pipeline", "Analytics", "Review Queue"] }, { label: "Resources", links: ["Documentation", "API Reference", "HuggingFace Model", "GitHub"] }, { label: "Project", links: ["About Us", "Graduation Project", "MIT License", "Contact"] }].map(({ label, links }) => (
+                    {[{ label: "Product", links: ["Dashboard", "Pipeline", "Analytics", "Review Queue"] }, { label: "Resources", links: ["Documentation", "API Reference", "HuggingFace Model", "GitHub"] }, { label: "Company", links: ["About", "Security Blog", "Careers", "Contact"] }].map(({ label, links }) => (
                       <div key={label}>
                         <div style={{ fontSize: 11, fontFamily: "'JetBrains Mono',monospace", color: "var(--cyan)", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: 16 }}>{label}</div>
                         {links.map((l) => <div key={l} style={{ fontSize: 13, color: "var(--muted)", marginBottom: 10, cursor: "pointer" }} onMouseEnter={e => e.currentTarget.style.color = "var(--text)"} onMouseLeave={e => e.currentTarget.style.color = "var(--muted)"}>{l}</div>)}
@@ -977,7 +1104,7 @@ export default function App() {
                   </div>
                 </div>
                 <div style={{ borderTop: "1px solid var(--border2)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-                  <span style={{ fontSize: 12, fontFamily: "'JetBrains Mono',monospace", color: "var(--dim)" }}>ArabGuard · Graduation Project · MIT License · arabguard.tech</span>
+                  <span style={{ fontSize: 12, fontFamily: "'JetBrains Mono',monospace", color: "var(--dim)" }}>© 2025 ArabGuard Inc. · arabguard.tech · All rights reserved.</span>
                   <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#00d2ff", animation: "pulse 2s infinite", display: "inline-block" }} />
                     <span style={{ fontSize: 11, fontFamily: "'JetBrains Mono',monospace", color: "var(--cyan)" }}>All Systems Operational</span>
