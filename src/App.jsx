@@ -582,8 +582,7 @@ export default function App() {
     .glass{background:rgba(7,11,24,0.7);border:1px solid var(--border);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
     .grad-text{background:linear-gradient(135deg,#00d2ff 0%,#0066ff 60%,#6633ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     /* ── Centering system ── */
-    .page-wrap{width:100%;max-width:var(--max-w);margin: 0 auto;padding-left:32px;padding-right:32px;display: flex;flex-direction: column;align-items: center;}
-    .hero-grid{display: grid;grid-template-columns: 1.2fr 0.8fr;gap: 60px;align-items: center;justify-content: center;width: 100%;}
+    .page-wrap{width:100%;max-width:var(--max-w);margin-left:auto;margin-right:auto;padding-left:32px;padding-right:32px;}
     .section-centered{width:100%;padding-left:24px;padding-right:24px;}
     .section-centered > *{max-width:var(--max-w);margin-left:auto;margin-right:auto;}
     /* ── Animations ── */
@@ -624,8 +623,7 @@ export default function App() {
     .tab-btn:not(.active):hover{color:var(--text);background:rgba(255,255,255,0.03);}
     /* ── Responsive ── */
     @media(max-width:900px){
-      .hero-grid{grid-template-columns: 1fr !important;text-align: center;}
-      .hero-grid div {display: flex;flex-direction: column;align-items: center;
+      .hero-grid{grid-template-columns:1fr!important;}
       .hero-right{display:none!important;}
       .stats-grid{grid-template-columns:repeat(2,1fr)!important;}
       .problem-grid{grid-template-columns:1fr!important;}
@@ -649,7 +647,7 @@ export default function App() {
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "0 24px", transition: "all 0.3s", background: scrolled ? "rgba(4,6,15,0.95)" : "transparent", backdropFilter: scrolled ? "blur(20px)" : "none", borderBottom: scrolled ? "1px solid rgba(0,180,255,0.1)" : "none" }}>
         <div className="page-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: 66, gap: 16 }}>
           {/* Logo */}
-          <button onClick={() => setActiveTab("home")} style={{ display: "flex", alignItems: "center", gap: 12, background: "none", border: "none", cursor: "pointer", flexShrink: 0 }}>
+          <button onClick={() => setActiveTab("home")} style={{ display: "flex", alignItems: "center", gap: 10, background: "none", border: "none", cursor: "pointer", flexShrink: 0 }}>
             {/* SVG Shield Logo */}
             <svg width="36" height="36" viewBox="0 0 200 200" fill="none" style={{ filter: "drop-shadow(0 0 8px rgba(0,210,255,0.45))" }}>
               <defs>
